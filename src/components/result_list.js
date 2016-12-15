@@ -13,9 +13,16 @@ class ResultList extends Component {
     renderResults(gigData) {
 
         return (
-            <tr>
-                <td>{gigData.act_name}</td>
-            </tr>
+            gigData.map(function(row, i) {
+                return (
+                    <tr>
+                        <td>{row.act_name}</td>
+                        <td>{row.gig_venue}</td>
+                        <td>{row.gig_time}</td>
+                        <td>{row.gig_date}</td>
+                    </tr>
+                );
+            })
         );
     }
 
@@ -26,6 +33,9 @@ class ResultList extends Component {
                 <thead>
                     <tr>
                         <th>Act Name</th>
+                        <th>Gig Venue</th>
+                        <th>Time</th>
+                        <th>Date</th>
                     </tr>
                 </thead>
                 <tbody>
